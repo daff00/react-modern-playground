@@ -54,7 +54,7 @@ To run this project locally, ensure you have Node.js installed, then execute the
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/daff00/react-modern-playground.git
 
 # Navigate into the project directory
 cd react-precision-suite
