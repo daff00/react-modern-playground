@@ -10,8 +10,8 @@ export default function Home() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.3 }}
-      // Centered Layout
-      className="min-h-screen bg-slate-950 flex flex-col items-center justify-center px-4 relative overflow-hidden text-white"
+      // Centered Layout (Dihapus bg-slate-950 dan text-white karena sudah di-handle oleh App.jsx)
+      className="min-h-screen flex flex-col items-center justify-center px-4 relative overflow-hidden"
     >
       
       {/* Logos Section */}
@@ -49,22 +49,22 @@ export default function Home() {
       {/* Wording Section */}
       <div className="text-center space-y-4 z-10">
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
-          <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-400">
+          <span className="bg-clip-text text-transparent bg-gradient-to-b from-slate-800 to-slate-500 dark:from-white dark:to-slate-400">
             Welcome to the
           </span>
           <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-cyan-600 to-purple-600 dark:from-purple-400 dark:via-cyan-400 dark:to-purple-400">
             Modern Playground
           </span>
         </h1>
 
-        <p className="max-w-md mx-auto text-slate-400 text-lg md:text-xl font-light leading-relaxed">
+        <p className="max-w-md mx-auto text-slate-600 dark:text-slate-400 text-lg md:text-xl font-light leading-relaxed">
           A high-performance React + Vite starter kit equipped with Framer Motion and Tailwind CSS.
         </p>
       </div>
 
       {/* Decorative background element */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[120px] -z-0 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/10 dark:bg-cyan-500/5 rounded-full blur-[120px] -z-0 pointer-events-none" />
     </motion.div>
   );
 }

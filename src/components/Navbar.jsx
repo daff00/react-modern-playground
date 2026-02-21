@@ -52,7 +52,7 @@ export default function Navbar() {
           onClick={toggleTheme}
           className="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-white/10 transition-colors"
         >
-          {isDarkMode ? <Sun size={18} className="text-yellow-400" /> : <Moon size={18} className="text-indigo-600" />}
+          {isDarkMode ? <Moon size={18} className="text-indigo-400" /> : <Sun size={18} className="text-yellow-500" />}
         </motion.button>
       </nav>
     </div>
