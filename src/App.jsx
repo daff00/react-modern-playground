@@ -11,7 +11,7 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="bg-slate-950 min-h-screen">
+    <div className="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white min-h-screen transition-colors duration-500">
       <Navbar />
       
       {/* AnimatePresence manages the exit/entry lifecycle */}
