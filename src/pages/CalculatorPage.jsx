@@ -40,24 +40,24 @@ export default function CalculatorPage() {
       exit={{ opacity: 0, y: -10 }}
       transition={{ duration: 0.3 }}
       // Standardized Layout for Header Consistency
-      className="min-h-screen bg-slate-950 flex flex-col items-center pt-32 px-4 relative overflow-hidden text-white"
+      className="min-h-screen flex flex-col items-center pt-32 px-4 relative overflow-hidden"
     >
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 dark:bg-purple-600/10 blur-[120px] rounded-full pointer-events-none transition-colors duration-500" />
 
       {/* Header - Locked Position */}
       <div className="text-center space-y-2 mb-12 z-10">
-        <h1 className="text-5xl font-bold tracking-tighter bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+        <h1 className="text-5xl font-bold tracking-tighter bg-gradient-to-r from-purple-600 to-cyan-600 dark:from-purple-400 dark:to-cyan-400 bg-clip-text text-transparent">
           Precision Compute
         </h1>
-        <p className="text-slate-500 text-sm font-medium uppercase tracking-widest">
+        <p className="text-slate-600 dark:text-slate-500 text-sm font-medium uppercase tracking-widest">
           Calculated Logic
         </p>
       </div>
 
       {/* Content */}
-      <motion.div className="relative z-10 w-full max-w-sm bg-white/5 backdrop-blur-3xl border border-white/10 p-8 rounded-[3rem] shadow-2xl">
+      <motion.div className="relative z-10 w-full max-w-sm bg-slate-100/60 dark:bg-white/5 backdrop-blur-3xl border border-slate-300 dark:border-white/10 p-8 rounded-[3rem] shadow-2xl transition-colors duration-500">
         <div className="flex flex-col items-end justify-end h-24 mb-6 px-4 overflow-hidden">
-          <p className="text-slate-500 text-sm truncate w-full text-right">
+          <p className="text-slate-500 dark:text-slate-400 text-sm truncate w-full text-right transition-colors">
             {equation}
           </p>
           <AnimatePresence mode="wait">
@@ -65,7 +65,7 @@ export default function CalculatorPage() {
               key={display}
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              className="text-5xl font-light"
+              className="text-5xl font-light text-slate-900 dark:text-white"
             >
               {display}
             </motion.h1>
@@ -84,7 +84,7 @@ export default function CalculatorPage() {
                     }
                   : undefined
               }
-              className="h-14 rounded-xl bg-slate-800/40 text-slate-300"
+              className="h-14 rounded-xl bg-slate-300/70 dark:bg-slate-800/40 text-slate-800 dark:text-slate-300 hover:bg-slate-400/70 dark:hover:bg-slate-700/50 transition-colors"
             >
               {btn}
             </button>
@@ -95,7 +95,7 @@ export default function CalculatorPage() {
               onClick={() =>
                 isNaN(btn) ? handleOperator("*") : handleNumber(btn)
               }
-              className="h-14 rounded-xl bg-white/5"
+              className="h-14 rounded-xl bg-slate-200/80 dark:bg-white/5 text-slate-900 dark:text-white hover:bg-slate-300 dark:hover:bg-white/10 transition-colors"
             >
               {btn}
             </button>
@@ -106,7 +106,7 @@ export default function CalculatorPage() {
               onClick={() =>
                 isNaN(btn) ? handleOperator("-") : handleNumber(btn)
               }
-              className="h-14 rounded-xl bg-white/5"
+              className="h-14 rounded-xl bg-slate-200/80 dark:bg-white/5 text-slate-900 dark:text-white hover:bg-slate-300 dark:hover:bg-white/10 transition-colors"
             >
               {btn}
             </button>
@@ -117,26 +117,26 @@ export default function CalculatorPage() {
               onClick={() =>
                 isNaN(btn) ? handleOperator("+") : handleNumber(btn)
               }
-              className="h-14 rounded-xl bg-white/5"
+              className="h-14 rounded-xl bg-slate-200/80 dark:bg-white/5 text-slate-900 dark:text-white hover:bg-slate-300 dark:hover:bg-white/10 transition-colors"
             >
               {btn}
             </button>
           ))}
           <button
             onClick={() => handleNumber("0")}
-            className="col-span-2 h-14 rounded-xl bg-white/5"
+            className="col-span-2 h-14 rounded-xl bg-slate-200/80 dark:bg-white/5 text-slate-900 dark:text-white hover:bg-slate-300 dark:hover:bg-white/10 transition-colors"
           >
             0
           </button>
           <button
             onClick={() => handleNumber(".")}
-            className="h-14 rounded-xl bg-white/5"
+            className="h-14 rounded-xl bg-slate-200/80 dark:bg-white/5 text-slate-900 dark:text-white hover:bg-slate-300 dark:hover:bg-white/10 transition-colors"
           >
             .
           </button>
           <button
             onClick={calculate}
-            className="h-14 rounded-xl bg-gradient-to-br from-purple-500 to-cyan-500"
+            className="h-14 rounded-xl bg-gradient-to-br from-purple-600 to-cyan-600 dark:from-purple-500 dark:to-cyan-500 text-white hover:opacity-90 transition-opacity"
           >
             =
           </button>
