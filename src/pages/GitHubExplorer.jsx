@@ -7,7 +7,9 @@ import { Search, MapPin, Link2, BookOpen, Users, Loader2 } from "lucide-react";
 export default function GithubExplorer() {
   const [username, setUsername] = useState("");
   const dispatch = useDispatch();
-  const { profile, repos, status, error } = useSelector((state) => state.github);
+  const { profile, repos, status, error } = useSelector(
+    (state) => state.github,
+  );
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -63,7 +65,11 @@ export default function GithubExplorer() {
               disabled={status === "loading" || !username.trim()}
               className="px-6 py-4 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-600 dark:from-blue-500 dark:to-cyan-500 text-white hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed shadow-lg flex items-center justify-center min-w-[80px]"
             >
-              {status === "loading" ? <Loader2 className="animate-spin" size={24} /> : <Search size={24} />}
+              {status === "loading" ? (
+                <Loader2 className="animate-spin" size={24} />
+              ) : (
+                <Search size={24} />
+              )}
             </button>
           )}
         </form>
@@ -72,9 +78,9 @@ export default function GithubExplorer() {
         <AnimatePresence mode="wait">
           {error && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
               className="text-red-500 bg-red-500/10 border border-red-500/20 p-4 rounded-2xl text-center backdrop-blur-md"
             >
               {error}
@@ -110,12 +116,24 @@ export default function GithubExplorer() {
                       @{profile.login}
                     </a>
                   </div>
-                  {profile.bio && <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{profile.bio}</p>}
-                  
+                  {profile.bio && (
+                    <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                      {profile.bio}
+                    </p>
+                  )}
+
                   <div className="flex flex-wrap justify-center sm:justify-start gap-4 pt-2 text-xs font-medium text-slate-500 dark:text-slate-400">
-                    <div className="flex items-center gap-1"><Users size={14} /> {profile.followers} Followers</div>
-                    <div className="flex items-center gap-1"><BookOpen size={14} /> {profile.public_repos} Repos</div>
-                    {profile.location && <div className="flex items-center gap-1"><MapPin size={14} /> {profile.location}</div>}
+                    <div className="flex items-center gap-1">
+                      <Users size={14} /> {profile.followers} Followers
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <BookOpen size={14} /> {profile.public_repos} Repos
+                    </div>
+                    {profile.location && (
+                      <div className="flex items-center gap-1">
+                        <MapPin size={14} /> {profile.location}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -138,7 +156,10 @@ export default function GithubExplorer() {
                         <span className="font-semibold text-slate-800 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate pr-4">
                           {repo.name}
                         </span>
-                        <Link2 size={16} className="text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                        <Link2
+                          size={16}
+                          className="text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"
+                        />
                       </div>
                       <p className="text-xs text-slate-500 dark:text-slate-400 truncate">
                         {repo.description || "Tidak ada deskripsi"}
@@ -146,7 +167,9 @@ export default function GithubExplorer() {
                     </a>
                   ))
                 ) : (
-                  <p className="text-sm text-slate-500 dark:text-slate-400 px-1">Tidak ada repositori publik.</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 px-1">
+                    Tidak ada repositori publik.
+                  </p>
                 )}
               </div>
             </motion.div>
