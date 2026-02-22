@@ -40,10 +40,10 @@ export default function TodoListPage() {
       transition={{ duration: 0.3 }}
       className="min-h-screen flex flex-col items-center pt-12 pb-32 sm:pt-32 sm:pb-12 px-4 relative overflow-hidden"
     >
-      <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-emerald-500/20 dark:bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none transition-colors duration-500" />
+      <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-600/20 dark:bg-purple-600/10 blur-[120px] rounded-full pointer-events-none transition-colors duration-500" />
 
       <div className="text-center space-y-2 mb-12 z-10">
-        <h1 className="text-5xl font-bold tracking-tighter bg-gradient-to-r from-emerald-600 to-cyan-600 dark:from-emerald-400 dark:to-cyan-400 bg-clip-text text-transparent pb-2 leading-tight">
+        <h1 className="text-5xl font-bold tracking-tighter bg-gradient-to-r from-purple-600 to-cyan-600 dark:from-purple-400 dark:to-cyan-400 bg-clip-text text-transparent pb-2 leading-tight">
           Action Items
         </h1>
         <p className="text-slate-600 dark:text-slate-500 text-sm font-medium uppercase tracking-widest">
@@ -58,12 +58,12 @@ export default function TodoListPage() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Add a new task..."
-            className="flex-1 px-6 py-4 rounded-2xl bg-slate-100/60 dark:bg-white/5 border border-slate-300 dark:border-white/10 focus:border-emerald-500/50 outline-none transition-all text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 backdrop-blur-md shadow-lg"
+            className="flex-1 px-6 py-4 rounded-2xl bg-slate-100/60 dark:bg-white/5 border border-slate-300 dark:border-white/10 focus:border-purple-500/50 outline-none transition-all text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 backdrop-blur-md shadow-lg"
           />
           <button
             type="submit"
             disabled={!input.trim()}
-            className="px-6 py-4 rounded-2xl bg-gradient-to-br from-emerald-600 to-cyan-600 dark:from-emerald-500 dark:to-cyan-500 text-white hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+            className="px-6 py-4 rounded-2xl bg-gradient-to-br from-purple-600 to-cyan-600 dark:from-purple-500 dark:to-cyan-500 text-white hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
           >
             <Plus size={24} />
           </button>
@@ -89,8 +89,8 @@ export default function TodoListPage() {
                   onClick={() => toggleTodo(todo.id)}
                   className={`flex-shrink-0 w-6 h-6 rounded-full border flex items-center justify-center transition-colors ${
                     todo.completed
-                      ? "bg-emerald-500 border-emerald-500 text-white"
-                      : "border-slate-400 dark:border-slate-500 hover:border-emerald-500 dark:hover:border-emerald-400"
+                      ? "bg-purple-500 border-purple-500 text-white"
+                      : "border-slate-400 dark:border-slate-500 hover:border-purple-500 dark:hover:border-purple-400"
                   }`}
                 >
                   {todo.completed && <Check size={14} strokeWidth={3} />}
