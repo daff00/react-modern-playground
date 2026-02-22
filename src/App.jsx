@@ -7,6 +7,7 @@ import CounterPage from "./pages/CounterPage";
 import TicTacToe from "./pages/TicTacToe";
 import Calculator from "./pages/CalculatorPage";
 import TodoListPage from "./pages/ToDoListPage";
+import GithubExplorer from "./pages/GitHubExplorer";
 
 function App() {
   const location = useLocation();
@@ -23,6 +24,7 @@ function App() {
           <Route path="/tictactoe" element={<TicTacToe />} />
           <Route path="/calculator" element={<Calculator />} />
           <Route path="/todo" element={<TodoListPage />} />
+          <Route path="/hub" element={<GithubExplorer />} />
         </Routes>
       </AnimatePresence>
     </div>

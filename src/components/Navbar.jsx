@@ -9,6 +9,7 @@ const links = [
   { path: "/tictactoe", label: "TicTacToe" },
   { path: "/calculator", label: "Calculator" },
   { path: "/todo", label: "Todo" },
+  { path: "/hub", label: "Hub"}
 ];
 
 export default function Navbar() {
